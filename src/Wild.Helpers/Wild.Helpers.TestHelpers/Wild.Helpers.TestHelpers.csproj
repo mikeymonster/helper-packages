@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageId>wild-testhelpers</PackageId>
-    <Version>0.1.0</Version>
+    <PackageId>Wild.TestHelpers</PackageId>
+    <Version>0.2.0</Version>
     <Authors>Mike Wild</Authors>
     <Company>Wild Consulting Limited</Company>
     <PackageDescription>Test helpers.</PackageDescription>
