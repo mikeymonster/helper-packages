@@ -41,10 +41,6 @@ steps:
     nobuild: true
     verbosityPack: 'Normal'
 
-- task: NuGetAuthenticate@0
-  inputs:
-    nuGetServiceConnections: 'WildConsultingNuGetServiceConnection'
-
 - task: NuGetCommand@2
   inputs:
     command: 'push'
