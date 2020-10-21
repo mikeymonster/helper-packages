@@ -34,10 +34,11 @@ steps:
     projects: '**/*.Tests.csproj'
 
 - task: DotNetCoreCLI@2
-  displayName: Package up the Assembly
+  displayName: Package the Assembly
   inputs:
     command: 'pack'
-    packagesToPack: './src/*.csproj'
+    projects: '!**/*Test.csproj'
+    outputDir: '$(Build.ArtifactStagingDirectory)'
     nobuild: true
     verbosityPack: 'Normal'
 
