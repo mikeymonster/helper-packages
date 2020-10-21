@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED77104F-5CE1-4611-A1B0-F6B715F73B2E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\README.md = ..\..\README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wild.Helpers.TestHelpers", "Wild.Helpers.TestHelpers\Wild.Helpers.TestHelpers.csproj", "{7FBE0DC1-C7CF-4F9D-9071-1E5E21499D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wild.Helpers.TestHelpers.Tests", "Wild.Helpers.TestHelpers.Tests\Wild.Helpers.TestHelpers.Tests.csproj", "{A728B8C3-DC47-4FF4-B72C-5C0CD52B4ACC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FBE0DC1-C7CF-4F9D-9071-1E5E21499D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBE0DC1-C7CF-4F9D-9071-1E5E21499D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBE0DC1-C7CF-4F9D-9071-1E5E21499D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBE0DC1-C7CF-4F9D-9071-1E5E21499D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A728B8C3-DC47-4FF4-B72C-5C0CD52B4ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A728B8C3-DC47-4FF4-B72C-5C0CD52B4ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A728B8C3-DC47-4FF4-B72C-5C0CD52B4ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A728B8C3-DC47-4FF4-B72C-5C0CD52B4ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A4CFB84-908C-4286-9DD8-05002992B34E}
+	EndGlobalSection
+EndGlobal
