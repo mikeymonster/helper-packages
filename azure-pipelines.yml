@@ -38,7 +38,11 @@ steps:
   inputs:
     command: 'pack'
     projects: '!**/*Test.csproj'
-    outputDir: '$(Build.ArtifactStagingDirectory)'
     nobuild: true
     verbosityPack: 'Normal'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    nugetFeedType: 'external'
+    externalEndPoint: 'WildConsultingNuGetServiceConnection'
