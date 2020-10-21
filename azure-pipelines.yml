@@ -10,7 +10,8 @@ pool:
   vmImage: 'winodws-latest'
 
 variables:
-  buildConfiguration: ${{ parameters.buildConfig }}
+  buildConfiguration: 'release'
+  buildPlatform: 'anycpu'
 
 steps:
 - task: UseDotNet@2
