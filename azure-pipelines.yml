@@ -41,8 +41,10 @@ steps:
     nobuild: true
     verbosityPack: 'Normal'
 
-- task: DotNetCoreCLI@2
+- task: NuGetAuthenticate@0
   inputs:
-    command: 'push'
-    nugetFeedType: 'external'
-    externalEndPoint: 'WildConsultingNuGetServiceConnection'
+    nuGetServiceConnections: WildConsultingNuGetServiceConnection'
+- task: NuGetCommand@2
+  inputs:
+    command: push
+    nuGetFeedType: external
