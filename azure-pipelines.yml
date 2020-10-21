@@ -10,21 +10,20 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  buildConfiguration: 'release'
-  buildPlatform: 'anycpu'
+  buildConfiguration: 'Release'
 
 steps:
 - task: UseDotNet@2
-  displayName: Setup .NET SDK Version 3.x
+  displayName: Setup .NET SDK
   inputs:
     packageType: sdk
     version: 3.x
-    includePreviewVersions: true
-
+    
 - task: DotNetCoreCLI@2
-  displayName: 'Build the Assembly'
+  displayName: 'Build'
   inputs:
     command: build
+    projects: '**/*.csproj'
     versioningScheme: byBuildNumber
     arguments: '--configuration $(BuildConfiguration)'
 
@@ -32,7 +31,8 @@ steps:
   displayName: 'Run the Unit Tests'
   inputs:
     command: 'test'    
- 
+    projects: '**/*.Tests.csproj'
+
 - task: DotNetCoreCLI@2
   displayName: Package up the Assembly
   inputs:
