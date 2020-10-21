@@ -1,0 +1,42 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: 'winodws-latest'
+
+variables:
+  buildConfiguration: ${{ parameters.buildConfig }}
+
+steps:
+- task: UseDotNet@2
+  displayName: Setup .NET SDK Version 3.x
+  inputs:
+    packageType: sdk
+    version: 3.x
+    includePreviewVersions: true
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build the Assembly'
+  inputs:
+    command: build
+    versioningScheme: byBuildNumber
+    arguments: '--configuration $(BuildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Run the Unit Tests'
+  inputs:
+    command: 'test'    
+ 
+- task: DotNetCoreCLI@2
+  displayName: Package up the Assembly
+  inputs:
+    command: 'pack'
+    packagesToPack: './src/*.csproj'
+    nobuild: true
+    verbosityPack: 'Normal'
+
