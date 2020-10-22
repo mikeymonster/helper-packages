@@ -3,6 +3,7 @@ using AutoFixture;
 using AutoFixture.AutoNSubstitute;
 using AutoFixture.Idioms;
 
+// ReSharper disable UnusedMember.Global
 namespace Wild.TestHelpers.Extensions
 {
     public static class AutoFixtureExtensions

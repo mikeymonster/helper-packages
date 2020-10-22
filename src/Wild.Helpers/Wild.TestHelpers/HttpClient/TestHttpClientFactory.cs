@@ -6,9 +6,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 
+// ReSharper disable UnusedMember.Global
 namespace Wild.TestHelpers.HttpClient
 {
-    // ReSharper disable once UnusedMember.Global
     public class TestHttpClientFactory
     {
         public System.Net.Http.HttpClient CreateHttpClient(Uri uri, object response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)

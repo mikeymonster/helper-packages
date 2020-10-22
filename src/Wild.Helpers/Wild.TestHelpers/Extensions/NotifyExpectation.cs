@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using FluentAssertions;
 
+// ReSharper disable UnusedMember.Global
 namespace Wild.TestHelpers.Extensions
 {
     public class NotifyExpectation<T>

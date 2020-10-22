@@ -20,9 +20,7 @@ namespace Wild.TestHelpers.Tests
         [Fact]
         public void ResourceExtensions_ReadManifestResourceStreamAsString_Gets_File()
         {
-            var currentNamespace = this.GetType().Namespace;
-
-            var result = $"{currentNamespace}.TestData.TextFile.txt"
+            var result = $"{GetType().Namespace}.TestData.TextFile.txt"
                 .ReadManifestResourceStreamAsString();
 
             result.Should().NotBeNull();
