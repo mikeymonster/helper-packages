@@ -6,7 +6,7 @@
     <Version>0.2.1</Version>
     <Authors>Mike Wild</Authors>
     <Company>Wild Consulting Limited</Company>
-    <PackageDescription>Test helpers for working with Xamarin Forms xUnit projects.</PackageDescription>
+    <PackageDescription>Test helper methods and extensions for working with Xamarin Forms xUnit projects.</PackageDescription>
     <PackageTags>Test helpers</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Copyright (c) 2020 Wild Consulting Limited</Copyright>

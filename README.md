@@ -5,7 +5,9 @@ Contains the source of nuget packages with common code used in testing and Xamar
 
 ## Test Helpers
 
-Other nuget packages uses:
+Test helper methods and extensions for working with Xamarin Forms xUnit projects.
+
+Other nuget packages used:
 - FluentAssertions - I find this very helpful when writing test assertions, and I use it in all my test projects. It's used a few of the jelper methods
 - AutoFixture - used for `ShouldNotAcceptNullConstructorArguments` and `ShouldNotAcceptNullOrBadConstructorArguments` 
 - AutoFixture.Idioms - used in 
@@ -14,7 +16,7 @@ Other nuget packages uses:
 
 ## To Do
 
-- Need to improve test coverage
+- Need to improve test coverage, especially in the TestHelpers project.
 
 
 ## Code Repository and build pipeline 
