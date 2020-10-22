@@ -1,9 +1,9 @@
 using System;
 using FluentAssertions;
-using Wild.Helpers.TestHelpers.Extensions;
+using Wild.TestHelpers.Extensions;
 using Xunit;
 
-namespace Wild.Helpers.TestHelpers.Tests
+namespace Wild.TestHelpers.Tests
 {
     public class ResourceExtensionsTests
     {
@@ -20,7 +20,9 @@ namespace Wild.Helpers.TestHelpers.Tests
         [Fact]
         public void ResourceExtensions_ReadManifestResourceStreamAsString_Gets_File()
         {
-            var result = "Wild.Helpers.TestHelpers.Tests.TestData.TextFile.txt"
+            var currentNamespace = this.GetType().Namespace;
+
+            var result = $"{currentNamespace}.TestData.TextFile.txt"
                 .ReadManifestResourceStreamAsString();
 
             result.Should().NotBeNull();

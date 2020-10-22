@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Windows.Input;
 
 // ReSharper disable UnusedMember.Global
-namespace Wild.Helpers.TestHelpers.Extensions
+namespace Wild.TestHelpers.Extensions
 {
     public static class NotifyCommandCanExecuteChangedTestExtensions
     {

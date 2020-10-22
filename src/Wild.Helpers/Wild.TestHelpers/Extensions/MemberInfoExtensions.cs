@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Wild.Helpers.TestHelpers.Extensions
+namespace Wild.TestHelpers.Extensions
 {
     public static class MemberInfoExtensions
     {

@@ -3,10 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackageId>Wild.TestHelpers</PackageId>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <Authors>Mike Wild</Authors>
     <Company>Wild Consulting Limited</Company>
-    <PackageDescription>Test helpers.</PackageDescription>
+    <PackageDescription>Test helpers for working with Xamarin Forms xUnit projects.</PackageDescription>
     <PackageTags>Test helpers</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Copyright (c) 2020 Wild Consulting Limited</Copyright>
@@ -19,15 +19,17 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <VersionMajor>1</VersionMajor>
-    <VersionMinor>0</VersionMinor>
-    <VersionBuild>0</VersionBuild>
+    <VersionMajor>0</VersionMajor>
+    <VersionMinor>2</VersionMinor>
+    <VersionBuild>1</VersionBuild>
   </PropertyGroup>
 
   <PropertyGroup>
+    <!-- ReSharper disable UnknownProperty -->
     <VersionPrefix Condition=" '$(BUILD_BUILDNUMBER)' == '' ">$(VersionMajor).$(VersionMinor).$(VersionBuild)-local</VersionPrefix>
     <VersionPrefix Condition=" '$(BUILD_BUILDNUMBER)' != '' And '$(Configuration)' == 'Debug'">$(VersionMajor).$(VersionMinor).$(VersionBuild)-$(BUILD_BUILDNUMBER)-preview</VersionPrefix>
     <VersionPrefix Condition=" '$(Configuration)' != 'Debug'">$(VersionMajor).$(VersionMinor).$(VersionBuild)</VersionPrefix>
+    <!-- ReSharper restore UnknownProperty -->
   </PropertyGroup>
 
   <ItemGroup>

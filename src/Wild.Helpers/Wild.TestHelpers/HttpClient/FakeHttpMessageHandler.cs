@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Wild.Helpers.TestHelpers.HttpClient
+namespace Wild.TestHelpers.HttpClient
 {
     public class FakeHttpMessageHandler : DelegatingHandler
     {

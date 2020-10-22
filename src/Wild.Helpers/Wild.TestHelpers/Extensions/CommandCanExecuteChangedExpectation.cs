@@ -3,7 +3,7 @@ using System.Windows.Input;
 using FluentAssertions;
 
 // ReSharper disable UnusedMember.Global
-namespace Wild.Helpers.TestHelpers.Extensions
+namespace Wild.TestHelpers.Extensions
 {
     public class CommandCanExecuteChangedExpectation<T>
         where T : class

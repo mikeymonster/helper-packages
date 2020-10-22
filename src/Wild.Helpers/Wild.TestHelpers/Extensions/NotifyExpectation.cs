@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using FluentAssertions;
 
-namespace Wild.Helpers.TestHelpers.Extensions
+namespace Wild.TestHelpers.Extensions
 {
     public class NotifyExpectation<T>
         where T : INotifyPropertyChanged

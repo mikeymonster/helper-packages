@@ -3,7 +3,7 @@ using AutoFixture;
 using AutoFixture.AutoNSubstitute;
 using AutoFixture.Idioms;
 
-namespace Wild.Helpers.TestHelpers.Extensions
+namespace Wild.TestHelpers.Extensions
 {
     public static class AutoFixtureExtensions
     {

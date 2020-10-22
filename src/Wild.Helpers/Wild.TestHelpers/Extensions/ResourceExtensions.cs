@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace Wild.Helpers.TestHelpers.Extensions
+namespace Wild.TestHelpers.Extensions
 {
     public static class ResourceExtensions
     {

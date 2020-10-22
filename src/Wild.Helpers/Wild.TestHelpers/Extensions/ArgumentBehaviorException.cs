@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoFixture.Idioms;
 
-namespace Wild.Helpers.TestHelpers.Extensions
+namespace Wild.TestHelpers.Extensions
 {
     public class ArgumentBehaviorException : IBehaviorExpectation
     {

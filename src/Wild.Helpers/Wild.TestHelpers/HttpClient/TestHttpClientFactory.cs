@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 
-namespace Wild.Helpers.TestHelpers.HttpClient
+namespace Wild.TestHelpers.HttpClient
 {
     // ReSharper disable once UnusedMember.Global
     public class TestHttpClientFactory
