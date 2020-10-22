@@ -12,6 +12,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wild.TestHelpers", "Wild.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wild.TestHelpers.Tests", "Wild.TestHelpers.Tests\Wild.TestHelpers.Tests.csproj", "{C08E0861-3800-4D37-971D-C595020BDC78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wild.Mvvm.Xamarin.Forms", "Wild.Mvvm.Xamarin.Forms\Wild.Mvvm.Xamarin.Forms.csproj", "{FE3EBCA7-7632-4252-92D3-8B27233DA5D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wild.Mvvm.Xamarin.Forms.Tests", "Wild.Mvvm.Xamarin.Forms.Tests\Wild.Mvvm.Xamarin.Forms.Tests.csproj", "{2DAE19A9-02C1-443E-9FB3-12FBB8AA2AAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{C08E0861-3800-4D37-971D-C595020BDC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C08E0861-3800-4D37-971D-C595020BDC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C08E0861-3800-4D37-971D-C595020BDC78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3EBCA7-7632-4252-92D3-8B27233DA5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3EBCA7-7632-4252-92D3-8B27233DA5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3EBCA7-7632-4252-92D3-8B27233DA5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3EBCA7-7632-4252-92D3-8B27233DA5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DAE19A9-02C1-443E-9FB3-12FBB8AA2AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DAE19A9-02C1-443E-9FB3-12FBB8AA2AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DAE19A9-02C1-443E-9FB3-12FBB8AA2AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DAE19A9-02C1-443E-9FB3-12FBB8AA2AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

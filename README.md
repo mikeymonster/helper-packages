@@ -3,6 +3,29 @@
 Contains the source of nuget packages with common code used in testing and Xamarin Forms development.
 
 
+## Wild.Mvvm.Xamarin.Forms.Tests
+
+Contains useful classes for working with MVVM in Xamarin Forms.
+
+#### ViewModelLocator
+ TODO: Add an example of how to use
+
+For example, in a xaml file include the following to set the data context
+to a viewmodel called `MainViewModel` in namepace `Your.Project.Namespace`:
+
+```
+xmlns:local="clr-namespace:Your.Project.Namespace;assembly=Tl.Search.Mobile"
+local:ViewModelLocator.ViewModelType="{x:Type vm:MainViewModel}"
+```
+
+`ViewModelLocator.ServiceProvider` is a static property that must be set during startup.
+
+```
+//Required - ViewModelLocator needs to be told where the ServiceProvider is.
+ViewModelLocator.ServiceProvider = ServiceProvider;
+``` 
+
+
 ## Test Helpers
 
 Test helper methods and extensions for working with Xamarin Forms xUnit projects.
