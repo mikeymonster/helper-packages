@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>8.0</LangVersion>
     <PackageId>Wild.Mvvm.Xamarin.Forms</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>Mike Wild</Authors>
     <Company>Wild Consulting Limited</Company>
     <PackageDescription>Contains useful classes for working with MVVM in Xamarin Forms.</PackageDescription>
@@ -16,6 +16,7 @@
       For details on how to use this package see the README file in the GitHub repository.
     </Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/mikeymonster/wild-helper-packages</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mikeymonster/wild-helper-packages</RepositoryUrl>
   </PropertyGroup>
 

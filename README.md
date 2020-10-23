@@ -3,9 +3,12 @@
 Contains the source of nuget packages with common code used in testing and Xamarin Forms development.
 
 
-## Wild.Mvvm.Xamarin.Forms.Tests
+## Wild.Mvvm.Xamarin.Forms
 
 Contains useful classes for working with MVVM in Xamarin Forms.
+
+Available from nuget - https://www.nuget.org/packages/Wild.Mvvm.Xamarin.Forms/
+
 
 #### ViewModelLocator
  TODO: Add an example of how to use
@@ -15,10 +18,11 @@ to a viewmodel called `MainViewModel` in namepace `Your.Project.Namespace`:
 
 ```
 xmlns:local="clr-namespace:Your.Project.Namespace;assembly=Tl.Search.Mobile"
+xmlns:vm="clr-namespace:Your.Project.ViewModels;assembly=Your.Project"
 local:ViewModelLocator.ViewModelType="{x:Type vm:MainViewModel}"
 ```
 
-`ViewModelLocator.ServiceProvider` is a static property that must be set during startup.
+`ViewModelLocator.ServiceProvider` is a static property that must be set during startup:
 
 ```
 //Required - ViewModelLocator needs to be told where the ServiceProvider is.
@@ -36,6 +40,8 @@ Other nuget packages used:
 - AutoFixture.Idioms - used in 
 - AutoNSubstitute - the initial version of the test helpers assume you are using NSubstitute
 
+Available from nuget - https://www.nuget.org/packages/Wild.TestHelpers/
+
 
 ## To Do
 
@@ -43,6 +49,8 @@ Other nuget packages used:
 
 
 ## Code Repository and build pipeline 
+
+Code is in GitHub - https://github.com/mikeymonster/wild-helper-packages
 
 The build pipeline will build the packages and deploy to nuget. 
 It can be found at https://dev.azure.com/wildconsultingltd (signin required).

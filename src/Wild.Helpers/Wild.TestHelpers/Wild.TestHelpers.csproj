@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackageId>Wild.TestHelpers</PackageId>
-    <Version>0.2.1</Version>
+    <Version>0.2.2</Version>
     <Authors>Mike Wild</Authors>
     <Company>Wild Consulting Limited</Company>
     <PackageDescription>Test helper methods and extensions for working with Xamarin Forms xUnit projects.</PackageDescription>
@@ -15,6 +15,7 @@
       For details on how to use this package see the README file in the GitHub repository.
     </Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/mikeymonster/wild-helper-packages</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mikeymonster/wild-helper-packages</RepositoryUrl>
   </PropertyGroup>
 
