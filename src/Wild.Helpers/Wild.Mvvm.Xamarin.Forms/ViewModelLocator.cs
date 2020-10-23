@@ -12,10 +12,20 @@ namespace Wild.Mvvm.Xamarin.Forms
 
     public class ViewModelLocator
     {
+        private static IServiceProvider _serviceProvider;
         public static IServiceProvider ServiceProvider
         {
-            get;
-            set;
+            get
+            {
+                if (_serviceProvider == null)
+                {
+                    throw new InvalidOperationException(
+                        "ServiceProvider not set in ViewModelLocator. " +
+                        "Make sure the ServiceProvider is set in the startup class.");
+                }
+                return _serviceProvider;
+            }
+            set => _serviceProvider = value;
         }
 
         public static readonly BindableProperty AutowireViewModelProperty =
