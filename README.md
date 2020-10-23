@@ -17,9 +17,9 @@ For example, in a xaml file include the following to set the data context
 to a viewmodel called `MainViewModel` in namepace `Your.Project.Namespace`:
 
 ```
-xmlns:local="clr-namespace:Your.Project.Namespace;assembly=Tl.Search.Mobile"
+xmlns:mvvm="clr-namespace:Wild.Mvvm.Xamarin.Forms;assembly=Wild.Mvvm.Xamarin.Forms"
 xmlns:vm="clr-namespace:Your.Project.ViewModels;assembly=Your.Project"
-local:ViewModelLocator.ViewModelType="{x:Type vm:MainViewModel}"
+mvvm:ViewModelLocator.ViewModelType="{x:Type vm:MainViewModel}"
 ```
 
 `ViewModelLocator.ServiceProvider` is a static property that must be set during startup:
