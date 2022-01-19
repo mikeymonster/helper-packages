@@ -3,28 +3,27 @@ using FluentAssertions;
 using Wild.TestHelpers.Extensions;
 using Xunit;
 
-namespace Wild.TestHelpers.Tests
+namespace Wild.TestHelpers.Tests;
+
+public class ResourceExtensionsTests
 {
-    public class ResourceExtensionsTests
+    [Fact]
+    public void ResourceExtensions_ReadManifestResourceStreamAsString_Bad_Path_Throws_Exception()
     {
-        [Fact]
-        public void ResourceExtensions_ReadManifestResourceStreamAsString_Bad_Path_Throws_Exception()
-        {
-            const string path = "Bad_Path";
+        const string path = "Bad_Path";
 
-            FluentActions.Invoking(() => path.ReadManifestResourceStreamAsString())
-                .Should().Throw<Exception>()
-                .And.Message.Should().Be($"Stream for '{path}' not found.");
-        }
+        FluentActions.Invoking(() => path.ReadManifestResourceStreamAsString())
+            .Should().Throw<Exception>()
+            .And.Message.Should().Be($"Stream for '{path}' not found.");
+    }
 
-        [Fact]
-        public void ResourceExtensions_ReadManifestResourceStreamAsString_Gets_File()
-        {
-            var result = $"{GetType().Namespace}.TestData.TextFile.txt"
-                .ReadManifestResourceStreamAsString();
+    [Fact]
+    public void ResourceExtensions_ReadManifestResourceStreamAsString_Gets_File()
+    {
+        var result = $"{GetType().Namespace}.TestData.TextFile.txt"
+            .ReadManifestResourceStreamAsString();
 
-            result.Should().NotBeNull();
-            result.Should().Be("This is a test");
-        }
+        result.Should().NotBeNull();
+        result.Should().Be("This is a test");
     }
 }

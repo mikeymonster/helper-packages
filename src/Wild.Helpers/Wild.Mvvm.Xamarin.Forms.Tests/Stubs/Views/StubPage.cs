@@ -1,8 +1,7 @@
 ﻿using Xamarin.Forms;
 
-namespace Wild.Mvvm.Xamarin.Forms.Tests.Stubs.Views
+namespace Wild.Mvvm.Xamarin.Forms.Tests.Stubs.Views;
+
+internal class StubPage : Page
 {
-    internal class StubPage : Page
-    {
-    }
 }

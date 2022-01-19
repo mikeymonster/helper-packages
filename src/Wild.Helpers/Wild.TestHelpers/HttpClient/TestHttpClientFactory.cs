@@ -7,78 +7,77 @@ using System.Net.Http.Headers;
 using System.Text.Json;
 
 // ReSharper disable UnusedMember.Global
-namespace Wild.TestHelpers.HttpClient
+namespace Wild.TestHelpers.HttpClient;
+
+public class TestHttpClientFactory
 {
-    public class TestHttpClientFactory
+    public System.Net.Http.HttpClient CreateHttpClient(Uri uri, object response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
     {
-        public System.Net.Http.HttpClient CreateHttpClient(Uri uri, object response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
-        {
-            var serializedResponse = JsonSerializer.Serialize(response);
+        var serializedResponse = JsonSerializer.Serialize(response);
 
-            return CreateHttpClient(uri, serializedResponse, responseContentType, responseCode);
+        return CreateHttpClient(uri, serializedResponse, responseContentType, responseCode);
+    }
+
+    public System.Net.Http.HttpClient CreateHttpClient(Uri uri, string response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
+    {
+        var httpResponseMessage = CreateFakeResponse(response, responseContentType, responseCode);
+
+        var fakeMessageHandler = new FakeHttpMessageHandler();
+        fakeMessageHandler.AddFakeResponse(uri, httpResponseMessage);
+
+        var httpClient = new System.Net.Http.HttpClient(fakeMessageHandler);
+
+        return httpClient;
+    }
+
+    public System.Net.Http.HttpClient CreateHttpClient(Uri uri, Stream response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
+    {
+        var httpResponseMessage = CreateFakeResponse(response, responseContentType, responseCode);
+
+        var fakeMessageHandler = new FakeHttpMessageHandler();
+        fakeMessageHandler.AddFakeResponse(uri, httpResponseMessage);
+
+        var httpClient = new System.Net.Http.HttpClient(fakeMessageHandler);
+
+        return httpClient;
+    }
+
+    public System.Net.Http.HttpClient CreateHttpClient(IDictionary<Uri, HttpResponseMessage> httpResponseMessages)
+    {
+        var fakeMessageHandler = new FakeHttpMessageHandler();
+
+        foreach (var (key, value) in httpResponseMessages)
+        {
+            fakeMessageHandler.AddFakeResponse(key, value);
         }
 
-        public System.Net.Http.HttpClient CreateHttpClient(Uri uri, string response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
+        var httpClient = new System.Net.Http.HttpClient(fakeMessageHandler);
+
+        return httpClient;
+    }
+
+    public HttpResponseMessage CreateFakeResponse(string response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
+    {
+        var httpResponseMessage = new HttpResponseMessage(responseCode)
         {
-            var httpResponseMessage = CreateFakeResponse(response, responseContentType, responseCode);
+            Content = new StringContent(response)
+        };
 
-            var fakeMessageHandler = new FakeHttpMessageHandler();
-            fakeMessageHandler.AddFakeResponse(uri, httpResponseMessage);
+        httpResponseMessage.Content.Headers.ContentType = new MediaTypeHeaderValue(responseContentType);
 
-            var httpClient = new System.Net.Http.HttpClient(fakeMessageHandler);
+        return httpResponseMessage;
+    }
 
-            return httpClient;
-        }
-
-        public System.Net.Http.HttpClient CreateHttpClient(Uri uri, Stream response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
+    public HttpResponseMessage CreateFakeResponse(Stream response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
+    {
+        var httpResponseMessage = new HttpResponseMessage(responseCode)
         {
-            var httpResponseMessage = CreateFakeResponse(response, responseContentType, responseCode);
-
-            var fakeMessageHandler = new FakeHttpMessageHandler();
-            fakeMessageHandler.AddFakeResponse(uri, httpResponseMessage);
-
-            var httpClient = new System.Net.Http.HttpClient(fakeMessageHandler);
-
-            return httpClient;
-        }
-
-        public System.Net.Http.HttpClient CreateHttpClient(IDictionary<Uri, HttpResponseMessage> httpResponseMessages)
-        {
-            var fakeMessageHandler = new FakeHttpMessageHandler();
-
-            foreach (var (key, value) in httpResponseMessages)
-            {
-                fakeMessageHandler.AddFakeResponse(key, value);
-            }
-
-            var httpClient = new System.Net.Http.HttpClient(fakeMessageHandler);
-
-            return httpClient;
-        }
-
-        public HttpResponseMessage CreateFakeResponse(string response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
-        {
-            var httpResponseMessage = new HttpResponseMessage(responseCode)
-            {
-                Content = new StringContent(response)
-            };
-
-            httpResponseMessage.Content.Headers.ContentType = new MediaTypeHeaderValue(responseContentType);
-
-            return httpResponseMessage;
-        }
-
-        public HttpResponseMessage CreateFakeResponse(Stream response, string responseContentType = "application/json", HttpStatusCode responseCode = HttpStatusCode.OK)
-        {
-            var httpResponseMessage = new HttpResponseMessage(responseCode)
-            {
-                Content = new StreamContent(response)
-            };
+            Content = new StreamContent(response)
+        };
 
 
-            httpResponseMessage.Content.Headers.ContentType = new MediaTypeHeaderValue(responseContentType);
+        httpResponseMessage.Content.Headers.ContentType = new MediaTypeHeaderValue(responseContentType);
 
-            return httpResponseMessage;
-        }
+        return httpResponseMessage;
     }
 }

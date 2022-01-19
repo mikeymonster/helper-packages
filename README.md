@@ -14,7 +14,7 @@ Available from nuget - https://www.nuget.org/packages/Wild.Mvvm.Xamarin.Forms/
  TODO: Add an example of how to use
 
 For example, in a xaml file include the following to set the data context
-to a viewmodel called `MainViewModel` in namepace `Your.Project.Namespace`:
+to a view model called `MainViewModel` in namespace `Your.Project.Namespace`:
 
 ```
 xmlns:mvvm="clr-namespace:Wild.Mvvm.Xamarin.Forms;assembly=Wild.Mvvm.Xamarin.Forms"
@@ -32,15 +32,24 @@ ViewModelLocator.ServiceProvider = ServiceProvider;
 
 ## Test Helpers
 
-Test helper methods and extensions for working with Xamarin Forms xUnit projects.
+Contains test helper methods and extensions for working with Xamarin Forms xUnit projects.
 
 Other nuget packages used:
-- FluentAssertions - I find this very helpful when writing test assertions, and I use it in all my test projects. It's used a few of the jelper methods
+- FluentAssertions - I find this very helpful when writing test assertions, and I use it in all my test projects. It's used a few of the helper methods
 - AutoFixture - used for `ShouldNotAcceptNullConstructorArguments` and `ShouldNotAcceptNullOrBadConstructorArguments` 
 - AutoFixture.Idioms - used in 
 - AutoNSubstitute - the initial version of the test helpers assume you are using NSubstitute
 
 Available from nuget - https://www.nuget.org/packages/Wild.TestHelpers/
+
+
+## Nuget versioning
+
+Nuget package versions are in the `.csproj` file for the packages.
+When a new version is ready to be deployed, update the version hthere. For example:
+```
+<Version>0.3.0</Version>
+```
 
 
 ## To Do
@@ -53,12 +62,12 @@ Available from nuget - https://www.nuget.org/packages/Wild.TestHelpers/
 Code is in GitHub - https://github.com/mikeymonster/wild-helper-packages
 
 The build pipeline will build the packages and deploy to nuget. 
-It can be found at https://dev.azure.com/wildconsultingltd (signin required).
+It can be found at https://dev.azure.com/wildconsultingltd (sign-in required).
  
 
 ## References
 
-Some useful lins on writing and building nuget packages
+Some useful links on writing and building nuget packages
 		https://softchris.github.io/pages/dotnet-nuget.html#create-a-nuget-package
 		https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/nuget?view=azure-devops&tabs=yaml
 		https://www.josephguadagno.net/2020/04/12/build-sign-and-deploy-nuget-packages-with-azure-pipelines
@@ -66,7 +75,7 @@ Some useful lins on writing and building nuget packages
 
 ## Copyright and License
 
-Copyright 2020 Wild Consulting Limited.
+Copyright 2020-2022 Wild Consulting Limited.
 
 Code licensed under the [MIT](https://github.com/BlackrockDigital/startbootstrap-small-business/blob/gh-pages/LICENSE) license.
 

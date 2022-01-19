@@ -4,23 +4,22 @@ using AutoFixture.AutoNSubstitute;
 using AutoFixture.Idioms;
 
 // ReSharper disable UnusedMember.Global
-namespace Wild.TestHelpers.Extensions
-{
-    public static class AutoFixtureExtensions
-    {
-        public static void ShouldNotAcceptNullConstructorArguments(this Type type)
-        {
-            var fixture = new Fixture().Customize(new AutoNSubstituteCustomization());
-            var assertion = new GuardClauseAssertion(fixture);
-            assertion.Verify(type.GetConstructors());
-        }
+namespace Wild.TestHelpers.Extensions;
 
-        public static void ShouldNotAcceptNullOrBadConstructorArguments(this Type type)
-        {
-            var fixture = new Fixture().Customize(new AutoNSubstituteCustomization());
-            var argumentNullException = new ArgumentBehaviorException();
-            var assertion = new GuardClauseAssertion(fixture, argumentNullException);
-            assertion.Verify(type.GetConstructors());
-        }
+public static class AutoFixtureExtensions
+{
+    public static void ShouldNotAcceptNullConstructorArguments(this Type type)
+    {
+        var fixture = new Fixture().Customize(new AutoNSubstituteCustomization());
+        var assertion = new GuardClauseAssertion(fixture);
+        assertion.Verify(type.GetConstructors());
+    }
+
+    public static void ShouldNotAcceptNullOrBadConstructorArguments(this Type type)
+    {
+        var fixture = new Fixture().Customize(new AutoNSubstituteCustomization());
+        var argumentNullException = new ArgumentBehaviorException();
+        var assertion = new GuardClauseAssertion(fixture, argumentNullException);
+        assertion.Verify(type.GetConstructors());
     }
 }
